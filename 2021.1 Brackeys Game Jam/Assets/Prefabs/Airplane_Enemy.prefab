@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2610580151727101413}
   - component: {fileID: 2610580151727101414}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2610580152042331669}
   - component: {fileID: 785149835}
   - component: {fileID: -8147670229423823356}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Airplane_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,9 @@ MonoBehaviour:
   Health: 10
   Speed: 1
   Damage: 10
+  Gold: 10
   aimPoint: {fileID: 3290701930948065915}
+  goldManager: {fileID: 0}
 --- !u!61 &785149835
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -189,7 +191,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2225890929817224156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: aimPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

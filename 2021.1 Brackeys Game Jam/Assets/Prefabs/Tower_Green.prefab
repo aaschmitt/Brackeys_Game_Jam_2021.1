@@ -44,10 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389b9aa69fc9f3a4cb6a96fecae95062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 2
+  Cost: 5
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  radius: 5.16
   timeBetweenEnemyChecks: 0.1
   timeBetweenShots: 1
-  lookAt: {fileID: 8015305788843915711}
+  lookAt: {fileID: 1349779613}
   bulletPrefab: {fileID: 1518099364480749146, guid: 0ef5eb51cf5c09947b7cb108886e2c26,
     type: 3}
 --- !u!1 &2302987769832159273
@@ -142,6 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3047883617756246673}
   - component: {fileID: 8015305788843915711}
+  - component: {fileID: 1349779613}
   m_Layer: 0
   m_Name: LookAtPoint
   m_TagString: Untagged
@@ -157,7 +162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4235783172823519925}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.177, z: 0}
+  m_LocalPosition: {x: 0, y: -0.014, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 162063291609008751}
@@ -165,6 +170,20 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8015305788843915711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4235783172823519925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6674929dbf58b044ae194194a593463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookAt: 1
+  Target: {fileID: 0}
+--- !u!114 &1349779613
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

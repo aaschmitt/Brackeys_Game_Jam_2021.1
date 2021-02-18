@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
+    public int Cost = 0;
+    
+    [SerializeField] private LayerMask enemyLayers;
     [SerializeField] private float radius = 2f;
     [SerializeField] private float timeBetweenEnemyChecks = 0.1f;
     [SerializeField] private float timeBetweenShots = 1f;
@@ -63,7 +66,7 @@ public class Tower : MonoBehaviour
     {
         while (true)
         {
-            LookAtEnemy(Physics2D.OverlapCircleAll(transform.position, radius));
+            LookAtEnemy(Physics2D.OverlapCircleAll(transform.position, radius, enemyLayers));
             yield return new WaitForSeconds(timeBetweenEnemyChecks);
         }
     }

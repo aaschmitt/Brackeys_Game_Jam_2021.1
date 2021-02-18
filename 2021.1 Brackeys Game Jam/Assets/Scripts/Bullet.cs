@@ -36,7 +36,6 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Collision!");
         var enemy = other.gameObject.GetComponent<Enemy>();
         if (enemy)
         {

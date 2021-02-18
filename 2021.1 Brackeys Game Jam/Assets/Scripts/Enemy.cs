@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,11 @@ public class Enemy : MonoBehaviour
     public float Health = 10;
     public float Speed = 0f;
     public float Damage = 0;
+    public int Gold = 0;
+    
     public GameObject aimPoint = null;
+
+    [SerializeField] private GoldManager goldManager = null;
     
     private Waypoints Wpoints = null;
     private int waypointIndex;
@@ -51,5 +56,11 @@ public class Enemy : MonoBehaviour
     private void InitializeVariables()
     {
         Wpoints = GameObject.FindGameObjectWithTag("Waypoints").GetComponent<Waypoints>();
+        goldManager = FindObjectOfType<GoldManager>();
+    }
+
+    private void OnDestroy()
+    {
+        if (goldManager) goldManager.AddGold(Gold);
     }
 }
