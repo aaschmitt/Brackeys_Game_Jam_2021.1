@@ -8,7 +8,7 @@ public class Tower : MonoBehaviour
     public int Cost = 0;
     
     [SerializeField] private LayerMask enemyLayers;
-    [SerializeField] private float radius = 2f;
+    public float radius = 2f;
     [SerializeField] private float timeBetweenEnemyChecks = 0.1f;
     [SerializeField] private float timeBetweenShots = 1f;
     
@@ -56,9 +56,9 @@ public class Tower : MonoBehaviour
     {
         while (true)
         {
+            yield return new WaitForSeconds(timeBetweenShots);
             var bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity).GetComponent<Bullet>();
             bullet.Direction = lookAt.Direction.normalized;
-            yield return new WaitForSeconds(timeBetweenShots);
         } 
     }
     

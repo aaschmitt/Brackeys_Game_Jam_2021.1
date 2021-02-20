@@ -46,8 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  damage: 5
+  damage: 1
   lifetime: 2
+  onHitPS: {fileID: 4920911749226061743, guid: 05c9b2976b43a4147af8856e4a6fa19d, type: 3}
 --- !u!61 &1366604826069363812
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -100,7 +101,7 @@ Transform:
   m_GameObject: {fileID: 3308402151776964761}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5358398982027772091}
   m_RootOrder: 0
@@ -144,8 +145,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 061793bccbe1f4a408d67fe2604d719e, type: 3}
-  m_Color: {r: 0.2325116, g: 0.3377276, b: 0.8962264, a: 1}
+  m_Sprite: {fileID: 5969770968562819938, guid: 08a6eecef0375294b95940241b1c6f86,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

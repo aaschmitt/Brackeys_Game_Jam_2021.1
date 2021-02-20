@@ -10,7 +10,7 @@ public class TowerSpawner : MonoBehaviour
     [SerializeField] private List<TileData> tileDatas = null;
     [SerializeField] private GoldManager goldManager = null;
 
-    private Tower selectedTower = null;
+    public Tower selectedTower = null;
     private Dictionary<TileBase, TileData> dataFromTiles = null;
     private HashSet<Vector3Int> tilesWithTowers = null;
 
@@ -48,20 +48,17 @@ public class TowerSpawner : MonoBehaviour
 
     private void SpawnTower()
     {
-        if (BuyTower())
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3Int gridPosition = tileMap.WorldToCell(mousePosition);
+        Vector3 spawnPosition = tileMap.GetCellCenterWorld(gridPosition);
+        TileBase clickedTile = tileMap.GetTile(gridPosition);
+        
+        if (selectedTower)
         {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int gridPosition = tileMap.WorldToCell(mousePosition);
-            Vector3 spawnPosition = tileMap.GetCellCenterWorld(gridPosition);
-            TileBase clickedTile = tileMap.GetTile(gridPosition);
-            
-            if (selectedTower)
+            if (dataFromTiles[clickedTile].isBuildable && !tilesWithTowers.Contains(gridPosition) && BuyTower())
             {
-                if (dataFromTiles[clickedTile].isBuildable && !tilesWithTowers.Contains(gridPosition))
-                {
-                    SpawnTower(selectedTower, spawnPosition);
-                    tilesWithTowers.Add(gridPosition);
-                }
+                SpawnTower(selectedTower, spawnPosition);
+                tilesWithTowers.Add(gridPosition);
             }
         }
     }

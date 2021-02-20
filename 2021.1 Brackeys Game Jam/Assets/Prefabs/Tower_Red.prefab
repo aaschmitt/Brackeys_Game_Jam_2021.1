@@ -44,13 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389b9aa69fc9f3a4cb6a96fecae95062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 10
+  Cost: 1
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256
   radius: 4.62
   timeBetweenEnemyChecks: 0.1
-  timeBetweenShots: 1
+  timeBetweenShots: 0.5
   lookAt: {fileID: 8015305788843915711}
   bulletPrefab: {fileID: 1518099364480749146, guid: 0ef5eb51cf5c09947b7cb108886e2c26,
     type: 3}

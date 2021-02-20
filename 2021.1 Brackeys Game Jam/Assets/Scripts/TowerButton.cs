@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class TowerButton : MonoBehaviour
 {
-    [SerializeField] private Tower tower = null;
+    public Tower tower = null;
     [SerializeField] private TowerPickerUI towerPickerUI = null;
 
     private void OnMouseDown()
     {
-        Debug.Log("UI clicked!");
-        towerPickerUI.selectedTower = tower;
+        if (tower)
+        {
+            towerPickerUI.selectedTower = tower;
+        }
+        else
+        {
+            towerPickerUI.selectedTower = null;
+        }
+        
         towerPickerUI.SelectTower(this);
     }
 }

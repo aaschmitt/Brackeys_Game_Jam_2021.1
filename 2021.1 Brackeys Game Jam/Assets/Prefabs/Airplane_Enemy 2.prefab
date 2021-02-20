@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 3404879361332276552}
   m_Layer: 8
   m_Name: Airplane_Enemy 2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39aa91236b38b0a4ea64fc1a8d33b325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 10
+  Health: 3
   Speed: 2
   Damage: 10
   Gold: 5

@@ -46,11 +46,11 @@ public class Enemy : MonoBehaviour
 
     public void DamageEnemy(float damage)
     {
-        if (Damage - damage <= 0)
+        if (Health - damage <= 0)
         {
             Destroy(gameObject);
         }
-        Damage -= damage;
+        Health -= damage;
     }
 
     private void InitializeVariables()
