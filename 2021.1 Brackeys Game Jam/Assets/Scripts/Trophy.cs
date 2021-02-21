@@ -6,6 +6,15 @@ public class Trophy : MonoBehaviour
 {
     public float Health = 100;
     [SerializeField] private TrophyHealthUI trophyHealthUI = null;
+    [SerializeField] private LevelManager levelManager = null;
+
+    private void Update()
+    {
+        if (Health <= 0)
+        {
+            if (levelManager) levelManager.EndLevel();
+        }
+    }
     
     private void OnCollisionEnter2D(Collision2D other)
     {

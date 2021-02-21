@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389b9aa69fc9f3a4cb6a96fecae95062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 1
+  Cost: 75
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256

@@ -9,18 +9,20 @@ public class EnemySpawner : MonoBehaviour
     public bool isActive = true;
     public List<Enemy> enemies = null;
     
-    [SerializeField] private float damageMultiplier = 1f;
     [SerializeField] private float speedMultiplier = 1f;
-    [SerializeField] private float healthMultiplier = 1f;
+    [SerializeField] private float buffMultiplier = 1.1f;
+
+    [SerializeField] private float timeBetweenBuffs = 15f;
     
-    [SerializeField] private float maxTimeBetweenSpawns = 10f;
-    [SerializeField] private float minTimeBetweenSpawns = 2f;
+    [SerializeField] private float maxTimeBetweenSpawns = 6f;
+    [SerializeField] private float minTimeBetweenSpawns = 0.5f;
 
     private IEnumerator _spawningEnemies = null;
-    private void Start()
+    private void OnEnable()
     {
         _spawningEnemies = WaitAndSpawn();
         StartCoroutine(_spawningEnemies);
+        StartCoroutine(WaitAndBuff());
     }
 
     private IEnumerator WaitAndSpawn()
@@ -34,10 +36,21 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    private IEnumerator WaitAndBuff()
+    {
+        while (isActive)
+        {
+            yield return new WaitForSeconds(timeBetweenBuffs);
+            speedMultiplier *= buffMultiplier;
+            if (!(maxTimeBetweenSpawns - 0.5f <= 0))
+            {
+                maxTimeBetweenSpawns -= 0.5f;
+            }
+        }
+    }
+
     private void ApplyMultipliers(Enemy enemy)
     {
-        enemy.Damage *= damageMultiplier;
-        enemy.Health *= healthMultiplier;
         enemy.Speed *= speedMultiplier;
     }
 
